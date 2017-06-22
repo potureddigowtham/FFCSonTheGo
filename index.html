@@ -128,23 +128,25 @@
 
   <!-- option buttons -->
   <div class="container-fluid">
-    <div id="option_buttons" class="text-center">
+    <div id="option_buttons" class="horizontal-scroll-no-collapse text-center">
       <button type="button" id="takeScreenshotBtn" class="btn btn-primary">Timetable Screenshot</button>
       <button type="button" id="toggleClickToSelect" data-toggle="button" class="btn btn-danger" data-state="enabled">Disable Quick Visualization</button>
       <button type="button" id="resetButton" class="btn btn-success">Reset</button>
-      <!-- Single button -->
-      <div class="btn-group" role="group">
-        <div class="btn-group">
-          <button id="saved-tt-picker-label" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="btn-text">Default</span> <span class="caret"></span>
-    </button>
-          
-          <ul id="saved-tt-picker" class="dropdown-menu">
-            <li><a href="#" data-table-id="0">Default</a></li>
-          </ul>
-        </div>
-        <button id="saved-tt-picker-add" type="button" class="btn btn-default">+</button>  
+
+      <!-- add timetables button-->
+      <div class="btn-group">
+        <button id="saved-tt-picker-label" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span class="btn-text">Default</span>
+          <span class="caret"></span>
+        </button>
+        <ul id="saved-tt-picker" class="dropdown-menu">
+          <li><a href="#" data-table-id="0">Default</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a id="saved-tt-picker-add" href="#">Add +</a></li>
+        </ul>
       </div>
+
     </div>
   </div>
   <!-- End of container-fluid -->
@@ -512,8 +514,6 @@
 
   <div class="container">
     <div class="row">
-      <!-- Workspace -->
-      <!--<div class="col-md-6 hidden-sm hidden-xs"><textarea class="form-control" id="workspace" style="font-size:22px;" rows="15" placeholder="Workspace"></textarea></div>-->
       <!-- facebook -->
       <!--<div class="col-md-6 col-sm-12 col-xs-12">-->
       <div class="col-xs-12">
@@ -572,10 +572,10 @@
   <!-- localForage -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.5.0/localforage.min.js"></script>
   <!-- js -->
-  <script src="js/colorChange.js"></script>
   <script src="data/all_data.js"></script>
   <script src="data/unique_courses.js"></script>
   <script src="js/autocomplete_course.js"></script>
+  <script src="js/colorChange.js"></script>
   <script src="js/script.js"></script>
   <!-- chat js -->
   <script src="js/chat.js"></script>

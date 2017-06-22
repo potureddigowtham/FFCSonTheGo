@@ -42,10 +42,10 @@ header .alert {
   width: 80%;
 }
 
-/*#option_buttons .btn {
+#option_buttons {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-}*/
+}
 
 #timetable .table {
   margin-bottom: 0!important;
@@ -92,23 +92,28 @@ footer {
   vertical-align: bottom;
 }
 
+
+/* support for dropdown menu with scroll */
+
+#option_buttons .dropdown-menu {
+  position: fixed;
+  top: auto;
+  left: auto;
+}
+
+@media screen and (max-width:768px) {
+  #option_buttons .dropdown-menu {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+  }
+}
+
 .screenshot_msg {
   color: black;
   background-color: white;
 }
-
-/* TODO: Fix apparent collapsing of buttons. */
-/* remove collapse of button in #option_buttons and add scroll on overflow */
-
-/*#option_buttons {
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
-#option_buttons .btn {
-  float: none;
-  display: inline-block;
-}*/
 
 .screenshot_msg tr,
 .screenshot_msg td {
@@ -583,10 +588,6 @@ footer a:hover {
 
 ::-webkit-scrollbar {
   height: 0.2em;
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
   background: transparent;
 }
 

@@ -1,5 +1,4 @@
-var timeTableStorage,
-	activeTable;
+var timeTableStorage, activeTable;
 
 timeTableStorage = [{
 	"id": 0,
@@ -87,9 +86,9 @@ $(function () {
 			"id": newTableId,
 			data: []
 		});
-		
+
 		switchTable(newTableId);
-		
+
 		addTableDropdownButton(newTableId);
 		updateTableDropdownLabel(newTableId);
 	});
@@ -156,7 +155,7 @@ function insertCourseToCourseListTable(courseId, courseCode, courseTile, faculty
 function updateCredits() {
 	var totalCredits = 0;
 	$('#courseListTable tbody tr').not('#totalCreditsTr').each(function () {
-		// 6th column in credits column
+		// 6th column is credits column
 		totalCredits += Number($(this).children('td').eq(5).text());
 	});
 	$('#totalCredits').text(totalCredits);
@@ -239,14 +238,15 @@ function switchTable(tableId) {
 	clearPage();
 	activeTable = timeTableStorage[tableId];
 	fillPage(activeTable.data);
-	updateTableDropdownLabel(tableId);	
+	updateTableDropdownLabel(tableId);
 }
 
 function addTableDropdownButton(tableId) {
-	$("#saved-tt-picker").append('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');	
+	// $("#saved-tt-picker").append('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');
+	$("#saved-tt-picker .divider").before('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');
 }
 
 function updateTableDropdownLabel(tableId) {
 	var labelText = tableId ? "Table " + tableId : "Default";
-	$("#saved-tt-picker-label .btn-text").text(labelText);		
+	$("#saved-tt-picker-label .btn-text").text(labelText);
 }
