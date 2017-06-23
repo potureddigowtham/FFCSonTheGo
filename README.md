@@ -1,4 +1,4 @@
-# FFCSonTheGo!
+# FFCS on The Go
 
 [![ghit.me](https://ghit.me/badge.svg?repo=VaTz88/FFCSonTheGo)](https://ghit.me/repo/VaTz88/FFCSonTheGo)
 [![Code Climate](https://codeclimate.com/github/VaTz88/FFCSonTheGo/badges/gpa.svg)](https://codeclimate.com/github/VaTz88/FFCSonTheGo)
@@ -7,7 +7,7 @@ Website to visualize VIT timetable. Helpful to students of VIT University, Vello
 
 ## Getting Started
 
-Visit the site here [ffcsonthego.azurewebsites.net](https://ffcsonthego.azurewebsites.net/)
+Visit the website here [ffcsonthego.azurewebsites.net](https://ffcsonthego.azurewebsites.net/)
 
 ## Contributing
 
