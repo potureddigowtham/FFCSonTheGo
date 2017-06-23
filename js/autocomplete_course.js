@@ -57,6 +57,27 @@ $(function () {
         placeholder: "Search..."
     };
 
+    $("#insertCourseSelectionOptions").on("click", "button", function () {
+        var code = $(this).data('code');
+        var title = $(this).data('title');
+        var slot = $(this).data('slot');
+        var faculty = $(this).data('faculty');
+        // var type = $(this).data('type');
+        var venue = $(this).data('venue');
+        var credits = $(this).data('credits');
+
+        $('#inputCourseCode').val(code);
+        $('#inputCourseTitle').val(title);
+        $('#inputSlotString').val(slot);
+        $('#inputFaculty').val(faculty);
+        $('#inputVenue').val(venue);
+        $('#inputCourseCredits').val(credits);
+    });
+
+    $("#insertCourseSelectionOptions").on("dblclick", "button", function () {
+        $('#slot-sel-area #addCourseBtn').click();
+    });
+
     $("#inputCourseTitle").easyAutocomplete(courseTitleOption);
     $("#inputCourseCode").easyAutocomplete(courseCodeOption);
     $("div.easy-autocomplete").removeAttr("style"); // for dynamic width
@@ -80,27 +101,6 @@ function getSlotSelectionButton(code, title, type, slot, faculty, credits, venue
     // $slotButton.data('type', type);
     $slotButton.data('venue', venue);
     $slotButton.data('credits', credits);
-
-    $slotButton.click(function () {
-        var code = $(this).data('code');
-        var title = $(this).data('title');
-        var slot = $(this).data('slot');
-        var faculty = $(this).data('faculty');
-        // var type = $(this).data('type');
-        var venue = $(this).data('venue');
-        var credits = $(this).data('credits');
-
-        $('#inputCourseCode').val(code);
-        $('#inputCourseTitle').val(title);
-        $('#inputSlotString').val(slot);
-        $('#inputFaculty').val(faculty);
-        $('#inputVenue').val(venue);
-        $('#inputCourseCredits').val(credits);
-    });
-
-    $slotButton.dblclick(function () {
-        $('#slot-sel-area #addCourseBtn').click();
-    });
 
     return $slotButton;
 }
