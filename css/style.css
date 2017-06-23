@@ -95,11 +95,12 @@ footer {
 
 /* support for dropdown menu with scroll */
 
-#option_buttons .dropdown-menu {
+
+/*#option_buttons .dropdown-menu {
   position: fixed;
   top: auto;
   left: auto;
-}
+}*/
 
 @media screen and (max-width:768px) {
   #option_buttons .dropdown-menu {
@@ -564,21 +565,22 @@ footer a:hover {
 
 /**
  * Add horizontal scroll and don't collapse the elements
+ * Putting it under @media preserve the original bootstrap properties when there is no overflow
  */
 
-.horizontal-scroll-no-collapse {
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
-.horizontal-scroll-no-collapse>* {
-  float: none;
-  display: inline-block;
-}
-
-.container .horizontal-scroll-no-collapse {
-  margin-left: -15px;
-  margin-right: -15px;
+@media screen and (max-width:768px) {
+  .horizontal-scroll-no-collapse {
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  .horizontal-scroll-no-collapse>* {
+    float: none;
+    display: inline-block;
+  }
+  .container .horizontal-scroll-no-collapse {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 
