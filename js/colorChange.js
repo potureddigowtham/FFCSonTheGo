@@ -242,8 +242,7 @@ function switchTable(tableId) {
 }
 
 function addTableDropdownButton(tableId) {
-	// $("#saved-tt-picker").append('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');
-	$("#saved-tt-picker .divider").before('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');
+	$("#saved-tt-picker").append('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');
 }
 
 function updateTableDropdownLabel(tableId) {
