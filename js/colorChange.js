@@ -1,5 +1,3 @@
-var timeTableStorage, activeTable;
-
 timeTableStorage = [{
 	"id": 0,
 	data: []
@@ -87,10 +85,8 @@ $(function () {
 			data: []
 		});
 
-		switchTable(newTableId);
-
 		addTableDropdownButton(newTableId);
-		updateTableDropdownLabel(newTableId);
+		switchTable(newTableId);
 	});
 
 	// TODO: Add an option to remove a table.
@@ -109,7 +105,6 @@ function addColorChangeEvents() {
 			}
 		}
 	});
-
 	$('.quick-selection *[class*="-tile"]').click(function () {
 		if ((!$("#timetable ." + this.classList[0].split('-')[0]).hasClass("clash")) && ($("#timetable ." + this.classList[0].split('-')[0]).children("div").length === 0)) {
 			if ($(this).hasClass("highlight")) {
@@ -242,10 +237,36 @@ function switchTable(tableId) {
 }
 
 function addTableDropdownButton(tableId) {
-	$("#saved-tt-picker").append('<li><a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a></li>');
+	var $li = $('<li></li>');
+	var $a = $('<a href="#" data-table-id="' + tableId + '">Table ' + (tableId) + '</a>');
+	var $span = $('<span class="close">&times;</span>');
+
+	$span.click(function () {
+		removeTable(tableId);
+		if (tableId === activeTable.id) {
+			switchTable(0);
+		}
+	});
+
+	$a.append($span);
+	$li.append($a);
+
+	$("#saved-tt-picker").append($li);
+}
+
+function removeTable(tableId) {
+	$('#saved-tt-picker li a[data-table-id="' + tableId + '"]').parent("li").remove();
+	timeTableStorage.forEach(function (el, i) {
+		if (el.id === tableId) {
+			timeTableStorage.splice(i, 1);
+			return;
+		}
+	});
+
+	updateLocalForage();
 }
 
 function updateTableDropdownLabel(tableId) {
-	var labelText = tableId ? "Table " + tableId : "Default";
+	var labelText = tableId ? "Table " + tableId : "Table Default";
 	$("#saved-tt-picker-label .btn-text").text(labelText);
 }

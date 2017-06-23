@@ -129,25 +129,28 @@
   <!-- option buttons -->
   <div class="container-fluid">
     <div id="option_buttons" class="horizontal-scroll-no-collapse text-center">
-      <!-- Screenshot button -->
-      <button type="button" id="takeScreenshotBtn" class="btn btn-success">Timetable Screenshot</button>
-      <!-- Quick visualization button -->
-      <button type="button" id="toggleClickToSelect" data-toggle="button" class="btn btn-warning" data-state="enabled">Disable Quick Visualization</button>
       <!-- Add timetables button-->
       <div class="btn-group" role="group">
         <div class="btn-group">
           <button id="saved-tt-picker-label" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <span class="btn-text">Default</span> <span class="caret"></span>
+            <span class="btn-text">Table Default</span>
+            <span class="caret"></span>
           </button>
           <ul id="saved-tt-picker" class="dropdown-menu">
-            <li><a href="#" data-table-id="0">Default</a></li>
+            <li><a href="#" data-table-id="0">Table Default</a></li>
           </ul>
         </div>
         <button id="saved-tt-picker-add" type="button" class="btn btn-primary">+</button>
       </div>
+      <!-- Screenshot button -->
+      <button type="button" id="takeScreenshotBtn" class="btn btn-success">Timetable Screenshot</button>
+      <!-- Quick visualization button -->
+      <button type="button" id="toggleClickToSelect" data-toggle="button" class="btn btn-warning" data-state="enabled">Disable Quick Visualization</button>
       <!-- Reset button -->
       <button type="button" id="resetButton" class="btn btn-danger">Reset</button>
+      <!-- Tour button -->
+      <!--<button type="button" id="tourButton" class="btn btn-info">Take A Tour</button>-->
 
     </div>
   </div>
@@ -582,9 +585,8 @@
   <!-- chat js -->
   <script src="js/chat.js"></script>
   <!-- enjoy hint -->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/enjoyhint/3.1.0/enjoyhint.min.js"></script>
-  <script src="js/enjoyhintsetup.js"></script>-->
-
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/enjoyhint/3.1.0/enjoyhint.min.js"></script>-->
+  <!--<script src="js/enjoyhintsetup.js"></script>-->
 </body>
 
 </html>

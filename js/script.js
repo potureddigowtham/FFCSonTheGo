@@ -27,13 +27,13 @@ $(function () {
     // load localForage data
     (function () {
         localforage.getItem('timeTableStorage').then(function (storedValue) {
-            // Set the activeTable as the first table by default.
             timeTableStorage = storedValue || timeTableStorage;
             activeTable = timeTableStorage[0];
+
             fillPage(activeTable.data);
             updateTableDropdownLabel(0);
 
-            timeTableStorage.slice(1).forEach(function(table) {
+            timeTableStorage.slice(1).forEach(function (table) {
                 addTableDropdownButton(table.id);
             });
         });
@@ -70,7 +70,17 @@ $(function () {
             }
         });
     });
+
+    // take a tour
+    // $("#tourButton").click(function () {
+    //     $.getScript("js/enjoyhintsetup.js");
+    // });
 });
+
+// save data through localForage before close
+function updateLocalForage() {
+    localforage.setItem('timeTableStorage', timeTableStorage);
+}
 
 // disable hover for touch screen devices
 function removeTouchHoverCSSRule() {
@@ -93,7 +103,12 @@ function removeTouchHoverCSSRule() {
     }
 }
 
-// save data through localForage before close
-function updateLocalForage() {
-    localforage.setItem('timeTableStorage', timeTableStorage);
-}
+// open github repo on ctrl+u
+document.onkeydown = function (e) {
+    if (e.ctrlKey && ((e.keyCode === 117 || e.keyCode === 85))) {
+        window.open("https://github.com/vatz88/FFCSonTheGo");
+        return false;
+    } else {
+        return true;
+    }
+};
